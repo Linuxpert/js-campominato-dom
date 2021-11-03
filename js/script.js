@@ -22,36 +22,29 @@ const bomb = [];
 //in base alla difficoltà si generano tot quadrati
 if (difficultGame === 1) {
 
-
-    while(bomb.length < 16){
-
-        const num = Math.floor(Math.random() * 100) + 1;
-        let sameNum = bomb.includes(num);
+    //generare 16 numeri casuali 
+    randomBombs (100);
     
-        if(sameNum === false){
-            bomb.push(num)
-        }
-    }
     console.log(bomb);
 
 
     for(let i = 1; i <= 100; i++){
-         console.log(i);
+        
         let newElem = createSquare ("div", "square1");
 
         let num = bomb.includes(i);
 
         if(num === true){
-            console.log("sono uguale");
             newElem.addEventListener("click",
                 function(){
                 this.classList.add("clicked-false");
                 newElem.innerText = `${i}`
+                console.log("hai perso");
             }
             );
 
         } else if(num === false){
-            console.log("non sono uguale");
+
             newElem.addEventListener("click",
                 function(){
                 this.classList.add("clicked-true");
@@ -72,15 +65,8 @@ if (difficultGame === 1) {
 }else if(difficultGame === 2){
 
 
-    while(bomb.length < 16){
+    randomBombs (81);
 
-        const num = Math.floor(Math.random() * 81) + 1;
-        let sameNum = bomb.includes(num);
-    
-        if(sameNum === false){
-            bomb.push(num)
-        }
-    }
     console.log(bomb);
 
 
@@ -96,6 +82,8 @@ if (difficultGame === 1) {
                 function(){
                 this.classList.add("clicked-false");
                 newElem.innerText = `${i}`
+                console.log("hai perso");
+
             }
             );
 
@@ -116,15 +104,8 @@ if (difficultGame === 1) {
 }else if(difficultGame === 3){
 
 
-    while(bomb.length < 16){
+    randomBombs (49);
 
-        const num = Math.floor(Math.random() * 49) + 1;
-        let sameNum = bomb.includes(num);
-    
-        if(sameNum === false){
-            bomb.push(num)
-        }
-    }
     console.log(bomb);
 
     for(let i = 1; i <= 49; i++){
@@ -139,6 +120,7 @@ if (difficultGame === 1) {
                 function(){
                 this.classList.add("clicked-false");
                 newElem.innerText = `${i}`
+                console.log("hai perso");
             }
             );
 
@@ -168,6 +150,19 @@ function createSquare (squareGen, classPlus) {
     nodeHundred.classList.add(classPlus);
 
     return nodeHundred;
+}
+
+function randomBombs (squareNum) {
+
+    while(bomb.length < 16){
+
+        const num = Math.floor(Math.random() * squareNum ) + 1;
+        let sameNum = bomb.includes(num);
+    
+        if(sameNum === false){
+            bomb.push(num)
+        }
+    }
 }
 
 

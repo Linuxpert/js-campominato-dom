@@ -21,23 +21,27 @@ const bomb = [];
 
 //in base alla difficoltà si generano tot quadrati
 if (difficultGame === 1) {
+
+
+    while(bomb.length < 16){
+
+        const num = Math.floor(Math.random() * 100) + 1;
+        let sameNum = bomb.includes(num);
+    
+        if(sameNum === false){
+            bomb.push(num)
+        }
+    }
+    console.log(bomb);
+
+
     for(let i = 1; i <= 100; i++){
-        // console.log(i);
+         console.log(i);
         let newElem = createSquare ("div", "square1");
 
-        
-        while(bomb.length < 16){
-            const num = Math.floor(Math.random() * 100) + 1;
-            let sameNum = bomb.includes(num);
-        
-            if(sameNum === false){
-                bomb.push(num)
-            }
-        }
-        // console.log(bomb);
+        let num = bomb.includes(i);
 
-
-        if(i === bomb[i]){
+        if(num === true){
             console.log("sono uguale");
             newElem.addEventListener("click",
                 function(){
@@ -46,7 +50,7 @@ if (difficultGame === 1) {
             }
             );
 
-        } else if(i !== bomb[i]){
+        } else if(num === false){
             console.log("non sono uguale");
             newElem.addEventListener("click",
                 function(){
@@ -60,19 +64,50 @@ if (difficultGame === 1) {
 
         grid.appendChild(newElem);
 
+        
     }
+
+    
+
 }else if(difficultGame === 2){
+
+
+    while(bomb.length < 16){
+
+        const num = Math.floor(Math.random() * 81) + 1;
+        let sameNum = bomb.includes(num);
+    
+        if(sameNum === false){
+            bomb.push(num)
+        }
+    }
+    console.log(bomb);
+
 
     for(let i = 1; i <= 81; i++){
 
+        let num = bomb.includes(i);
+
         let newElem = createSquare ("div", "square2");
         
-        newElem.addEventListener("click",
-            function(){
+        if(num === true){
+            console.log("sono uguale");
+            newElem.addEventListener("click",
+                function(){
+                this.classList.add("clicked-false");
+                newElem.innerText = `${i}`
+            }
+            );
+
+        } else if(num === false){
+            console.log("non sono uguale");
+            newElem.addEventListener("click",
+                function(){
                 this.classList.add("clicked-true");
                 newElem.innerText = `${i}`
             }
-        );
+            );
+        }
 
         grid.appendChild(newElem);
 
@@ -80,21 +115,50 @@ if (difficultGame === 1) {
 
 }else if(difficultGame === 3){
 
+
+    while(bomb.length < 16){
+
+        const num = Math.floor(Math.random() * 49) + 1;
+        let sameNum = bomb.includes(num);
+    
+        if(sameNum === false){
+            bomb.push(num)
+        }
+    }
+    console.log(bomb);
+
     for(let i = 1; i <= 49; i++){
+
+        let num = bomb.includes(i);
 
         let newElem = createSquare ("div", "square3");
 
-        newElem.addEventListener("click",
-            function(){
+        if(num === true){
+            console.log("sono uguale");
+            newElem.addEventListener("click",
+                function(){
+                this.classList.add("clicked-false");
+                newElem.innerText = `${i}`
+            }
+            );
+
+        } else if(num === false){
+            console.log("non sono uguale");
+            newElem.addEventListener("click",
+                function(){
                 this.classList.add("clicked-true");
                 newElem.innerText = `${i}`
             }
-        );
+            );
+        }
 
         grid.appendChild(newElem);
 
     }
 }
+
+
+
 
 
 //funzioni

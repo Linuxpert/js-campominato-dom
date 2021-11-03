@@ -1,0 +1,133 @@
+/* generali */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: darkblue;
+}
+
+.container {
+    width: 700px;
+    margin: 60px auto;
+    border: white solid 3px;
+    
+}
+
+#containersquare {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+
+/* grandezza quadrati */
+
+/* difficoltà 1 */
+.square1 {
+    height: calc(100% / 10);
+    width: calc(100% / 10);
+    border: white solid 3px;
+    float: left;
+    cursor: pointer;
+}
+
+/* difficoltà 2 */
+.square2 {
+    height: calc(100% / 9);
+    width: calc(100% / 9);
+    border: white solid 3px;
+    float: left;
+    cursor: pointer;
+}
+
+/* difficoltà 3 */
+.square3 {
+    height: calc(100% / 7);
+    width: calc(100% / 7);
+    border: white solid 3px;
+    float: left;
+    cursor: pointer;
+}
+
+
+.square1 span {
+    display: none;
+}
+.square2 span {
+    display: none;
+}
+.square3 span {
+    display: none;
+}
+
+
+.square1 span.green{
+    color: green;
+}
+.square2 span.green{
+    color: green;
+}
+.square3 span.green{
+    color: green;
+}
+
+
+
+.square1 span.red{
+    color: red;
+}
+.square2 span.red{
+    color: red;
+}
+.square3 span.red{
+    color: red;
+}
+
+
+
+.square-container {
+    height: 700px;
+}
+
+
+
+.square1.clicked-true {
+    background: rgb(107, 106, 106);
+}
+.square2.clicked-true {
+    background: rgb(107, 106, 106);
+}
+.square3.clicked-true {
+    background: rgb(107, 106, 106);
+}
+
+
+
+.square1.clicked-false {
+    background: rgb(255, 0, 0);
+}
+.square2.clicked-false {
+    background: rgb(255, 0, 0);
+}
+.square3.clicked-false {
+    background: rgb(255, 0, 0);
+}
+
+
+
+.square1.clicked-true span {
+    display: block;
+}
+.square2.clicked-true span {
+    display: block;
+}
+.square3.clicked-true span {
+    display: block;
+}
+
+
+
